@@ -1,0 +1,62 @@
+Title,Company,Link,Description
+Senior Full Stack Developer,Ace Software Consulting Inc.,https://ca.indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0BkAEcZ2xmTVuqrjW1SvJB0AVmVlij-7r8yI_Mbg-wRomYTohnZhVqMxXnqheVjnqPHxSi5Z66BQJbJ_fBkqWBjAWh1aL6IlB9bnO1x-0bSU8XH7-E_LGMkYT20qquYK96CWtH8dh8gZvsXkbXKw-t0Z8_UWecExT0co9LR7oWUyRlbwqUSxg4QPMYwtLLgID8AqQfYoFROsK3WQSM_9FzkEER4LFEj_365g45FeGmrfn4Sjh1ls9vKPM_Jyy4X7i_kae9aRTKzZtYlaZyt765yQrJewYHLUUgbww3I2zWaSxFGfDd3uO4JGTs5GuxksbXjwnVs62U7LWB0W8sJjJJp0ib9CfKM5179p6Ei29wz8oTaMQcSwFHiTBRsF_CuJHaA9gtSfybrtGhe42TFzbGhAyIl7ZaScrp4qvs-Ie33HBZ3AlOoiv_GA45XjoncJIg1mS_kTuRT1zEqpwPFL46lK-82Jv_9BARsqBEMuMyKUHGCtJVOkqEFXDCy1j3WvxjY6-iB66WinJdWtC3W76wVXlIR0riRGYDbCrGZpqZspGFs7X6ZiYrhihg2pWjfM_g1RZnw5iu-uxaiQriW1to7bTyWnmxqRvlYGPlyD5CyK7S42Cv8GKdl49VA1ZeBClmbrqTIbL6BRgfJ6VlogLpRyzg66RuvpwFTsuQ_QnefrnbChchjyEEbwWNKHrj09ZI7ntIkM1YTGDIfh-fL8-Sm&xkcb=SoB86_M3puv0wsyMbJ0KbzkdCdPP&camk=UoKtGZLa3XLQ1XyfCNLxcg==&p=0&fvj=0&vjs=3,"Job Summary
+We are seeking a Senior Full Stack Developer with 6+ years of experience to join our dynamic development team. The ideal candidate will have expertise in Angular, Java 17, Spring Boot, Spring MVC, and Hibernate, with hands-on experience in building scalable and high-performance microservices.
+
+Responsibilities
+
+Develop, enhance, and maintain scalable and efficient microservices using Angular, Java 17, Spring Boot, and Spring MVC.
+Design and implement RESTful and GraphQL APIs for seamless communication between services.
+Work with Hibernate and MySQL for database operations, ensuring optimized queries and database performance.
+Utilize Redis cache to enhance application performance and reduce database load.
+Deploy and manage microservices on AWS ECS, integrating services with S3, DynamoDB, and CloudWatchfor logging and monitoring.
+Ensure high code quality through unit testing, integration testing, and continuous integration (CI/CD) pipelines.
+Optimize performance, troubleshoot issues, and implement best security practices in microservices.
+Collaborate with cross-functional teams including DevOps and QA to deliver high-quality software solutions.
+Stay updated with the latest Java and AWS advancements, incorporating best practices into development.
+
+Required Skills & Experience
+
+6+ years of experience in Angular and Java development, with a strong focus on Spring Boot and microservices architecture.
+Proficiency in Java 17 and related frameworks such as Spring MVC, Hibernate, and Spring Data JPA.
+Experience with MySQL and query optimization techniques.
+Hands-on experience with GraphQL for efficient data retrieval.
+Strong understanding of Redis Cache for improving application performance.
+Experience in deploying and managing microservices on AWS ECS and working with AWS services like S3, DynamoDB, and CloudWatch.
+Familiarity with containerization (Docker, Kubernetes) and CI/CD tools.
+Knowledge of authentication and security best practices in microservices.
+Strong analytical and problem-solving skills with an agile mindset.
+Excellent communication skills and the ability to work collaboratively in a team environment.
+
+Preferred Qualifications
+
+Experience with Kubernetes and Terraform for infrastructure automation.
+Exposure to serverless computing using AWS Lambda.
+Familiarity with API Gateway, Kafka, and event-driven architectures.
+Experience in monitoring tools like Grafana, Prometheus or Datadog.
+Bachelor’s or Master’s degree in Computer Science, Information Technology, Software Engineering, or a related field.
+Equivalent industry experience with strong technical expertise will also be considered.
+
+Why Join Us?
+
+Opportunity to work on cutting-edge microservices and cloud-based architectures.
+Work with a talented and passionate team in a collaborative and growth-oriented environment.
+Opportunities for professional development.
+
+Job Type: Full-time
+
+Benefits:
+
+Flexible schedule
+Work from home
+
+Application question(s):
+
+What is your expected annual salary (in CAD)?
+
+Experience:
+
+Software development: 6 years (required)
+Java: 5 years (required)
+Spring Boot: 3 years (required)
+
+Work Location: Remote"
