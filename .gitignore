@@ -1,0 +1,13 @@
+# Ignore Python background files
+__pycache__/
+*.py[cod]
+
+# Ignore environment variables (where the API keys are hidden)
+.env
+
+# Ignore VS Code specific settings
+.vscode/
+
+# Ignore operating system junk
+.DS_Store
+Thumbs.db
