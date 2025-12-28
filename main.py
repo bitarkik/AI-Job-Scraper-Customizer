@@ -1,17 +1,21 @@
 from playwright.sync_api import sync_playwright
 import time
 import random
-import csv  # New library to handle saving data
+import csv
 
-def run():
-    print("🤖 Bot is starting job search...")
+# We moved the logic inside this function so other scripts can call it
+def scrape_jobs(search_term):
+    print(f"🤖 Bot is starting search for: '{search_term}'...")
     
-    # Prepare the CSV file to save data
-    # 'w' means write, 'newline=""' prevents empty lines in Excel
-    file = open('jobs.csv', 'w', newline='', encoding='utf-8')
+    # We will append to the file so we don't overwrite previous searches
+    # 'a' mode means append
+    file = open('jobs.csv', 'a', newline='', encoding='utf-8')
     writer = csv.writer(file)
-    # Create the headers (columns)
-    writer.writerow(["Title", "Company", "Link"])
+    
+    # Only write headers if the file is empty (optional check, skipping for simplicity)
+    # writer.writerow(["Title", "Company", "Link"]) 
+
+    found_jobs = []
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
@@ -20,58 +24,49 @@ def run():
         )
         page = context.new_page()
         
-        # Search Indeed Canada
-        page.goto("https://ca.indeed.com/jobs?q=Computer+Science&l=Canada")
+        # SEARCH for the specific term passed to the function
+        # We replace spaces with "+" for the URL (e.g., "Full Stack" -> "Full+Stack")
+        query = search_term.replace(" ", "+")
+        url = f"https://ca.indeed.com/jobs?q={query}&l=Canada"
         
-        # Wait randomly
+        page.goto(url)
         time.sleep(random.uniform(3, 5))
         
-        # Try to close popups
         try:
             page.locator("button[aria-label='close']").click(timeout=2000)
         except:
             pass
         
-        # Get all the job cards (the container that holds title, company, link)
-        # Note: Indeed changes classes often. 'td.resultContent' is a common container.
         job_cards = page.locator("td.resultContent").all()
-        
-        print(f"\n✅ Found {len(job_cards)} jobs. Extracting details...\n")
+        print(f"   ✅ Found {len(job_cards)} jobs for {search_term}.")
         
         for job in job_cards:
             try:
-                # 1. Get Title
-                title_element = job.locator("h2.jobTitle span")
-                title = title_element.inner_text()
+                title = job.locator("h2.jobTitle span").inner_text()
                 
-                # 2. Get Company Name
-                # 'span[data-testid="company-name"]' is the standard tag
+                # Get Link
+                link_element = job.locator("a").first
+                link = "https://ca.indeed.com" + link_element.get_attribute("href")
+                
+                # Get Company
                 company_element = job.locator('span[data-testid="company-name"]')
                 if company_element.count() > 0:
                     company = company_element.inner_text()
                 else:
                     company = "Unknown"
 
-                # 3. Get Link
-                # The link is usually on the <a> tag inside the title header
-                link_element = job.locator("a").first
-                link = "https://ca.indeed.com" + link_element.get_attribute("href")
-                
-                # Print to terminal so we see progress
-                print(f"saved: {title} @ {company}")
-                
-                # Save to CSV file
+                # Save to CSV
                 writer.writerow([title, company, link])
+                found_jobs.append(title)
                 
-            except Exception as e:
-                # If one job fails, don't crash the whole bot!
-                print(f"⚠️ Error extracting a job: {e}")
+            except:
+                pass
 
-        print("-" * 40)
-        print("🎉 Success! Data saved to 'jobs.csv'.")
-        
-        file.close() # Close the file so we can open it
         browser.close()
+    
+    file.close()
+    return found_jobs
 
 if __name__ == "__main__":
-    run()
+    # Test it manually if we run this file directly
+    scrape_jobs("Python Developer")
